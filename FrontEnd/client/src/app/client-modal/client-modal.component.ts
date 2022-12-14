@@ -38,13 +38,8 @@ export class ClientModalComponent implements OnInit {
 
   public openModal(data : any = undefined){
     const dialog = this.dialog.open(EditAdressComponent, {
-<<<<<<< HEAD
       width : '450px',
       data  : data
-=======
-      width: '450px',
-      data : data
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
     });
 
     dialog.afterClosed().subscribe((result : any) => {
@@ -89,11 +84,7 @@ export class ClientModalComponent implements OnInit {
       this.dialogRef.close();
   }
 
-<<<<<<< HEAD
     public async reset(){
-=======
-      public async reset(){
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
         this.customer = {
           nameFantasy  : '',
           CNPJ         : '',
@@ -102,8 +93,4 @@ export class ClientModalComponent implements OnInit {
           addresses    : []
         }
       }
-<<<<<<< HEAD
-=======
-
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
   }

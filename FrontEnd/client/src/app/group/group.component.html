@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div class="filtro">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Pesquise por um grupo</mat-label>
@@ -8,15 +7,6 @@
     <mat-icon>library_add</mat-icon>
   </button>
 </div>
-=======
-<app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm" [id]="'inputFilter'"></app-input>
-<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
-<table>
-  <th>ID</th>
-  <th>Grupo</th> 
-  <th>Editar</th>
-  <th>Excluir</th>
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
 
 <div *ngIf="groups.length == 0 && filterTerm != ''">
 <p class="text-search">Nenhum registro encontrado</p>

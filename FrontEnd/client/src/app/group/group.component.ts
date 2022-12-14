@@ -4,11 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { GroupModalComponent } from '../group-modal/group-modal.component';
 import { QuestionService } from 'src/services/question.service';
 import { EditGroupComponent } from '../edit-group/edit-group.component';
-<<<<<<< HEAD
 import { ObjectUtils } from 'src/app/utils/ObjectUtils';
-=======
-// import { FormUtils } from '../Utils/formutils';
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
 
 
 @Component({
@@ -25,18 +21,13 @@ export class GroupComponent implements OnInit  { //AfterViewInit
   constructor(private httpService : HttpService, public dialog: MatDialog, private question: QuestionService) { }
 
   ngOnInit(): void {
-<<<<<<< HEAD
     this.list2();    
-=======
-    this.list();    
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
   }
 
   // ngAfterViewInit(): void {
   //   // FormUtils.setFocus('inputFilter');    
   // }
 
-<<<<<<< HEAD
   public async list2(){
     this.groups = await this.httpService.get('group');
     ObjectUtils.copyArray(this.groups, this.originalList)
@@ -47,8 +38,6 @@ export class GroupComponent implements OnInit  { //AfterViewInit
   }
 
 
-=======
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
   public async list(){
     this.groups = await this.httpService.get('group');
     if (this.filterTerm.length > 0){

@@ -10,7 +10,6 @@ import { QuestionService } from 'src/services/question.service';
 })
 export class EditAdressComponent implements OnInit {
 
-<<<<<<< HEAD
   nameFantasy     : string = '';
   socialReason    : string = '';
   CNPJ            : string = '';
@@ -27,24 +26,6 @@ export class EditAdressComponent implements OnInit {
   complement      : String = '';
   ame             : String = '';  
   adress          : string = '';
-=======
-  nameFantasy : string = '';
-  socialReason : string = '';
-  CNPJ : string = '';
-  clientSince : string = '';
-  id : string = '';
-  selectedClient = 0;
-  street : String = ''
-  city: String = '';
-  state: String = '';
-  cep = '';
-  number = '';
-  district : String = '';
-  fkclient : number = 0
-  complement : String = '';
-  ame : String = '';  
-  adress : string = '';
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
 
   constructor(public httpClient: HttpClient, 
               public dialogRef: MatDialogRef<EditAdressComponent>,
@@ -72,7 +53,6 @@ export class EditAdressComponent implements OnInit {
   public async addEndereco(){
     this.question.ask(async () => {
       const obj = {
-<<<<<<< HEAD
         street      :this.street,
         district    :this.district,
         city        :this.city, 
@@ -80,15 +60,6 @@ export class EditAdressComponent implements OnInit {
         cep         :this.cep, 
         number      :this.number, 
         complement  :this.complement
-=======
-        street:this.street,
-        district:this.district,
-        city:this.city, 
-        state:this.state,
-        cep:this.cep, 
-        number:this.number, 
-        complement:this.complement
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
       }
 
       this.dialogRef.close(obj);
@@ -100,7 +71,6 @@ export class EditAdressComponent implements OnInit {
     }
 
     public async reset(){
-<<<<<<< HEAD
       this.district   = '',
       this.number     = '',
       this.complement = '',
@@ -109,21 +79,6 @@ export class EditAdressComponent implements OnInit {
       this.street     = '',
       this.cep        = '';
     }
-=======
-      this.district= '',
-      this.number= '',
-      this.complement= '',
-      this.city= '',
-      this.state= '',
-      this.street= '',
-      this.cep = '';
-    }
-
-    /*public async add(){
-      this.clients =  await this.httpService.post('address', {address : this.address, nameFantasy : this.nameFantasy, socialReason:  this.socialReason, CNPJ : this.CNPJ, clientSince : this.clientSince, 'id' : this.id})
-        this.onNoClick()
-    }*/
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
 
     async procurarcep(){
       if(this.cep.length == 8){

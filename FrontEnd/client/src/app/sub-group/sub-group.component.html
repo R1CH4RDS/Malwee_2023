@@ -1,13 +1,8 @@
-<<<<<<< HEAD
 <div class="example-form">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Pesquise por um subgrupo</mat-label>
     <input matInput placeholder="" value="" [(ngModel)]="filterTerm" (input)="filterInput()">
   </mat-form-field>
-=======
-<app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm" [id]="'inputFilter'"></app-input>
-<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
 
   <button mat-raised-button color="primary" (click)="openModal()" aria-label="Example icon button with a plus one icon">
     <mat-icon>library_add</mat-icon>

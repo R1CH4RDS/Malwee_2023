@@ -17,10 +17,7 @@ export class InputComponent implements OnInit {
   @Input() required : boolean = false;
   @Output() input = new EventEmitter<any>();
   @Input() id : string = '';
-<<<<<<< HEAD
   @Input() readonly : boolean = false;
-=======
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
 
   private _value = '';
 

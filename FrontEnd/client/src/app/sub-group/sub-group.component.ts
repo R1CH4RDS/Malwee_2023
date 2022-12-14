@@ -4,13 +4,9 @@ import {MatDialog} from '@angular/material/dialog';
 import { QuestionService } from 'src/services/question.service';
 import { SubGroupModalComponent } from '../sub-group-modal/sub-group-modal.component';
 import { EditSubGroupComponent } from '../edit-sub-group/edit-sub-group.component';
-<<<<<<< HEAD
 import { ObjectUtils } from 'src/app/utils/ObjectUtils';
 import { PromiseService } from 'src/services/promise.service';
 
-=======
-// import { FormUtils } from '../Utils/formutils';
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
 
 @Component({
   selector: 'app-sub-group',
@@ -26,12 +22,7 @@ export class SubGroupComponent implements OnInit {
   constructor(private httpService : HttpService, public dialog: MatDialog, private question: QuestionService,  private promise : PromiseService,) { }
 
   ngOnInit(): void {
-<<<<<<< HEAD
     this.list(); 
-=======
-    this.list();
-    // FormUtils.setFocus('inputFilter');    
->>>>>>> 4761011b462c50706cba09532374b78cc06aa210
   }
 
   public async list(){
