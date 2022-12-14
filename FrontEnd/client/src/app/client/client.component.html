@@ -1,0 +1,34 @@
+<div class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Pesquise por um cliente</mat-label>
+    <input matInput placeholder="" value="" [(ngModel)]="filterTerm" (input)="filterInput()">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="openModal()" aria-label="Example icon button with a plus one icon">
+    <mat-icon>library_add</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="clients.length == 0 && filterTerm != ''">
+<p>Nenhum registro encontrado</p>
+<img class="imgBuscar" src="/assets/dog.jpeg">
+</div>
+
+
+<div class="tabela">
+<table class="table" *ngIf="clients.length > 0">
+    <tr class="title">
+      <td> ID </td>
+      <td> Cliente </td>
+      <td> CNPJ </td>
+      <td class="delete">Deletar</td>
+    </tr>
+
+    <tr *ngFor="let cliente of clients">
+      <td> {{cliente.id}} </td>
+      <td (click)="openModalEdit(cliente)"> {{cliente.nameFantasy}} </td>
+      <td (click)="openModalEdit(cliente)"> {{cliente.CNPJ}} </td>
+      <td (click)="deleteGroup(cliente.id)" class="delete"> <mat-icon>delete_outline</mat-icon> </td>
+    </tr>
+</table>
+</div>

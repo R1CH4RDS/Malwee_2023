@@ -1,0 +1,9 @@
+<app-basicmodal [title]="'Novo Grupo'" (save)="add()">
+    <app-input [label]="'Descrição do grupo'" [required]="true" [(ngModel)]="description" ></app-input>
+    <table>
+        <tr *ngFor="let group of groups">
+          <td>{{group.id}} - </td>
+          <td>{{group.description}} </td>
+       </tr>
+    </table>    
+</app-basicmodal>

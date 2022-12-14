@@ -1,0 +1,40 @@
+<<<<<<< HEAD
+<div class="filtro">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Pesquise por um grupo</mat-label>
+    <input matInput placeholder="" value="" [(ngModel)]="filterTerm" (input)="filterInput()">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="openModal()" aria-label="Example icon button with a plus one icon">
+    <mat-icon>library_add</mat-icon>
+  </button>
+</div>
+=======
+<app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm" [id]="'inputFilter'"></app-input>
+<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
+<table>
+  <th>ID</th>
+  <th>Grupo</th> 
+  <th>Editar</th>
+  <th>Excluir</th>
+>>>>>>> 4761011b462c50706cba09532374b78cc06aa210
+
+<div *ngIf="groups.length == 0 && filterTerm != ''">
+<p class="text-search">Nenhum registro encontrado</p>
+<img class="imgBuscar" src="/assets/dog.jpeg">
+</div>
+
+<div class="tabela">
+<table  *ngIf="groups.length > 0">
+    <tr class="title">
+      <td> ID </td>
+      <td> Grupo </td>
+      <td class="delete">Deletar</td>
+    </tr>
+    <tr *ngFor="let group of groups">
+      <td> {{group.id}} </td>
+      <td (click)="openModalEdit(group)"> {{group.description}} </td>
+      <td (click)="deleteGroup(group.id)" class="delete"> <mat-icon>delete_outline</mat-icon> </td>
+    </tr>
+</table>
+</div>
+

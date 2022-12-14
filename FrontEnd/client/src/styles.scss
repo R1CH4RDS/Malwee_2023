@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+
+.BTedit{
+    border: 0ch ;
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+  }
+  .BTdelet{
+    border: 0ch ;
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+  }
+  
+  table , tr {
+    border: 0px solid grey;
+    border-collapse:separate;
+    padding: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+  
+  table{
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 10px;
+    letter-spacing: 1px;
+    width: 90%;
+    margin: 20px auto;}
+  
+  td{
+    justify-content: center;
+    padding :10px;
+  }
+
+  .Bt{
+    position: relative;
+    width: 52px;
+    height: 52px;
+    top: 2px;
+    left: 119px;
+  }

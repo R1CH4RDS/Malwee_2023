@@ -1,0 +1,11 @@
+
+    <!-- <button class="X" (click)="closeModal()">X</button> -->
+    <app-dropdown [array]="products" [title]="'Produto'" [(ngModel)]="selectedProduct" [idField]="'id'" [textField]="'description'" (select)="onSelectProduct($event)" required></app-dropdown> 
+    <app-input [label]="'Vl Unitário'" [(ngModel)]="originalPrice" (keyup)="calcular()" [required]="true" [readonly]="true"></app-input>         
+    <app-input [label]="'% de Adição'" [(ngModel)]="addition" (keyup)="calcular()" [required]="true"></app-input> 
+    <app-input [label]="'% de Desconto'" [(ngModel)]="descont" (keyup)="calcular()" [required]="true" ></app-input> 
+    <app-input [label]="'Vl Unit Liq'" [(ngModel)]="unitvalue" (keyup)="calcular()" [required]="true" [readonly]="true"></app-input>     
+    <app-input [label]="'Quantidade'" [(ngModel)]="amount" (keyup)="calcular()" [required]="true"></app-input>     
+    <app-input [label]="'Total'" [(ngModel)]="total"  [required]="true" [readonly]="true"></app-input>   
+    <br>
+    <button mat-raised-button color="Stroked" (click)="addProdorder()">Salvar</button>  

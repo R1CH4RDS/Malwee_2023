@@ -1,0 +1,20 @@
+<app-input [label]="'Pesquisa'"(input)="list()" [(ngModel)]="filterTerm"></app-input>
+<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
+<table>  
+  <th>ID</th>
+  <th>Cliente</th> 
+  <th>Data de Entrega</th>
+  <th>Data de emissão</th>
+  <th>Endereços</th>
+  <th>Valor Total</th>
+  <th>Excluir</th>
+    <tr *ngFor="let order of orders" (click)="openModalEdit(order)">
+      <td>{{order.id}}  </td>
+      <td>{{order.client_nameFantasy}} </td>
+      <td>{{order.DTdelivery}} </td>
+      <td>{{order.DTemission}} </td>
+      <td>{{order.adress_street}} </td>
+      <td>{{order.total}} </td>
+      <td><button class="BTdelet"(click)="deleteGroup(order.id)"><mat-icon>delete</mat-icon></button></td>
+    </tr>
+</table>

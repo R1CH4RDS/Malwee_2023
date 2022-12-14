@@ -1,0 +1,41 @@
+6<app-basicmodal [title]="title()" > <!--(save)="add()"--> 
+  <div class="id">
+       
+    </div>
+      <br>
+      <app-date>[(ngModel)]="selectedClient"</app-date>
+      <br>
+      <app-date>[(ngModel)]="selectedClient"</app-date>
+      <br>
+    
+
+  <div>  
+    <app-dropdown [array]="clients" [title]="'Cliente'" [(ngModel)]="selectedClient" [idField]="'id'" [textField]="'nameFantasy'" (select)="onSelectClient($event)" required></app-dropdown> 
+    <app-dropdown [array]="adresses" [title]="'Endereços'" [(ngModel)]="selectedAdress" [idField]="'id'" [textField]="'street'" (select)="onSelectAdress($event)"></app-dropdown> 
+    
+      </div>
+
+      
+      <table>
+          <th>Codigo</th>
+          <th>Nome</th> 
+          <th>Quantidade</th>
+          <th>Valor</th>
+          <th>Desconto</th>
+          <th>Adição</th>
+          <th>Total</th>
+          <th><button class="add" (click)="openModal()">+</button></th>
+            <tr *ngFor="let Prodorder of order.products">
+              <td>{{Prodorder.fkproduct}} </td>
+              <td>{{Prodorder.name}} </td>
+              <td>{{Prodorder.amount}} </td>
+              <td>{{Prodorder.price}} </td>
+              <td>{{Prodorder.descont}} </td>
+              <td>{{Prodorder.addition}} </td>
+              <td>{{Prodorder.total}} </td>
+              <td><button  class="BTedit" ><mat-icon>edit</mat-icon></button></td>
+              <td> <button class="BTdelet"><mat-icon>delete</mat-icon></button></td>
+            </tr>
+        </table>
+        VALOR TOTAL: 
+</app-basicmodal>

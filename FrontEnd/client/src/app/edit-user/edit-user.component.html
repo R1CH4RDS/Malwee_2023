@@ -1,0 +1,6 @@
+<app-basicmodal [title]="'Editar produto'" (save)="change()">
+    <app-input [label]="'Novo Nome'"  [(ngModel)]="name"></app-input>
+    <app-input [label]="'Novo Usuario'"  [(ngModel)]="username"></app-input>
+    <app-input [label]="'Nova Senha'"  [(ngModel)]="password"></app-input>
+    <app-input [label]="'Confirme a Nova Senha '"  [(ngModel)]="cpassword"></app-input>
+</app-basicmodal>

@@ -1,0 +1,9 @@
+<td><app-input [label]="'CEP'" (keyup)="procurarcep()" [required]="true" [(ngModel)]="cep"></app-input><br>
+    <app-input [label]="'Nome da Rua'" [required]="true" [(ngModel)]="street"></app-input><br>
+    <app-input [label]="'Numero'" [required]="true" [(ngModel)]="number"></app-input><br>
+    <app-input [label]="'Complemento'" [required]="true" [(ngModel)]="complement"></app-input><br>
+    <app-input [label]="'Cidade'" [required]="true" [(ngModel)]="city"></app-input><br>
+    <app-input [label]="'Bairro'" [required]="true" [(ngModel)]="district"></app-input><br>
+    <app-input [label]="'Estado'" [required]="true" [(ngModel)]="state"></app-input><br>
+    <button mat-raised-button color="primary" (click)="addEndereco()">Adicionar Endereço</button>
+</td>

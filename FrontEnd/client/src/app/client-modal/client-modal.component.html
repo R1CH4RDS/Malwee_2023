@@ -1,0 +1,48 @@
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Cliente</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-tab-group dynamicHeight>
+      <mat-tab  label="Usuario"  class="edittab">
+        <div class="edittab">
+          <app-input [label]="'Nome Fantasia'" [required]="true" [(ngModel)]="customer.nameFantasy"></app-input><br>
+          <app-input [label]="'Razão Social'" [required]="true" [(ngModel)]="customer.socialReason"></app-input><br>
+          <app-input [label]="'CNPJ'" [required]="true" [(ngModel)]="customer.CNPJ"></app-input><br>
+          <app-input [label]="'Cliente Desde'" [required]="true" ></app-input><br> 
+        </div>
+      </mat-tab>
+       <mat-tab label="Endereço" > 
+         <div class="edittab">
+           <app-input [label]="'Pesquisa'" [(ngModel)]="filterTerm"></app-input>
+           <button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
+           <table>  
+           <th>ID</th>
+           <th>Rua</th>
+           <th>Bairro</th>
+           <th>Estado</th>
+           <th>Cidade</th>
+           <th>CEP</th>
+           <th>Numero</th>
+           <th>Complemento</th>
+             <tr *ngFor="let address of customer.addresses" (click)="openModal(address)">
+              <td>{{address.id}}</td> 
+              <td>{{address.street}}</td> 
+              <td>{{address.district}}</td>
+              <td>{{address.state}}</td>
+              <td>{{address.city}}</td>
+              <td>{{address.cep}}</td>
+              <td>{{address.number}}</td>
+              <td>{{address.complement}}</td>
+             </tr>
+         </table>
+        </div>
+     </mat-tab>
+     </mat-tab-group>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-button>Cancelar</button>
+    <button mat-button (click)="save()">Salvar</button>
+  </mat-card-actions>
+</mat-card>

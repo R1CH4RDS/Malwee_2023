@@ -1,0 +1,34 @@
+<div class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Pesquise por um produto</mat-label>
+    <input matInput placeholder="" value="" [(ngModel)]="filterTerm" (input)="filterInput()">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="openModal()" aria-label="Example icon button with a plus one icon">
+    <mat-icon>person</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="products.length == 0 && filterTerm != ''">
+<p>Nenhum registro encontrado</p>
+<img class="imgBuscar" src="/assets/dog.jpeg">
+</div>
+
+<div class="tabela">
+<table class="table" *ngIf="products.length > 0">
+    <tr class="title">
+      <td> ID </td>
+      <td> Produto </td>
+      <td> Preço </td>
+      <td> Coleção </td>
+      <td class="delete">Deletar</td>
+    </tr>
+    <tr *ngFor="let product of products">
+      <td> {{product.id}} </td>
+      <td (click)="openModalEdit(product)"> {{product.description}} </td>
+      <td> R$ {{product.price}} </td>
+      <td> {{product.collection_description}} </td>
+      <td (click)="deleteSubGroup(product.id)" class="delete"> <mat-icon>delete_outline</mat-icon> </td>
+    </tr>
+</table>
+</div>

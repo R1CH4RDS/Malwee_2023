@@ -1,0 +1,41 @@
+<<<<<<< HEAD
+<div class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Pesquise por um subgrupo</mat-label>
+    <input matInput placeholder="" value="" [(ngModel)]="filterTerm" (input)="filterInput()">
+  </mat-form-field>
+=======
+<app-input [label]="'Pesquisa'" (input)="list()" [(ngModel)]="filterTerm" [id]="'inputFilter'"></app-input>
+<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
+>>>>>>> 4761011b462c50706cba09532374b78cc06aa210
+
+  <button mat-raised-button color="primary" (click)="openModal()" aria-label="Example icon button with a plus one icon">
+    <mat-icon>library_add</mat-icon>
+  </button>
+</div>
+
+<div *ngIf="subgroups.length == 0 && filterTerm != ''">
+<p>Nenhum registro encontrado</p>
+<img class="imgBuscar" src="/assets/dog.jpeg">
+</div>
+
+<div class="tabela">
+<table class="table" *ngIf="subgroups.length > 0">
+    <tr class="title">
+      <td> ID </td>
+      <td> SubGrupo </td>
+      <td> Grupo </td>
+      <td class="delete">Deletar</td>
+    </tr>
+    <div *ngIf="">
+    <tr *ngFor="let subgroup of subgroups" >
+      
+      <td> {{subgroup.id}} </td>
+      <td (click)="openModalEdit(subgroup)"> {{subgroup.description}} </td>
+      <td> {{subgroup.group_description}} </td>
+      <td (click)="deleteSubGroup(subgroup.id)" class="delete"> <mat-icon>delete_outline</mat-icon> </td>
+
+    </tr>
+  </div>
+</table>
+</div>

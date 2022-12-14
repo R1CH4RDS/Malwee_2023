@@ -1,0 +1,7 @@
+<app-basicmodal [title]="'Editar produto'" (save)="change()">
+    <app-input [label]="'Nova descrição do produto'"  [(ngModel)]="description"></app-input>
+    <app-input [label]="'Novo preço do produto'"  [(ngModel)]="price"></app-input>
+    <app-dropdown [array]="groups" [title]="'Grupo'"  [(ngModel)]="selectedGroup"></app-dropdown> <br>
+    <app-dropdown [array]="subgroups" [title]="'Subgrupo'" [(ngModel)]="selectedSubGroup"></app-dropdown> <br>
+    <app-dropdown [array]="collections" [title]="'Coleção'"  [(ngModel)]="selectedCollection"></app-dropdown>
+</app-basicmodal>
