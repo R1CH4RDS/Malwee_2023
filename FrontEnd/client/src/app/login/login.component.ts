@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
   username : string = 'adm';
-  password : string = '123456';
+  password : string = 'richard123';
   hide : boolean = true;
   isLogin : boolean = false;
 
@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login(){
-    this.HttpClient.post('http://localhost:3006/logon', {username : this.username, password : this.password}).toPromise().then((response : any)=> {
+    this.HttpClient.post('http://localhost:3015/logon', {username : this.username, password : this.password}).toPromise().then((response : any)=> {
       console.log(response);
       if(response.token){
         this.isLogin = true;

@@ -86,12 +86,13 @@ export class OrderModalComponent implements OnInit {
   }
 
   public openModal(){
+    console.log(this.DTdelivery)
     const dialog = this.dialog.open(ProductModalComponent, {
       width: '450px',
     });
 
     dialog.afterClosed().subscribe((obj : any) => {
-      debugger
+    
       this.order.products.push(obj);
     })
   }

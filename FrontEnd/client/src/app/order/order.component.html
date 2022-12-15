@@ -1,20 +1,37 @@
-<app-input [label]="'Pesquisa'"(input)="list()" [(ngModel)]="filterTerm"></app-input>
-<button class="Bt" mat-stroked-button (click)="openModal()"><mat-icon>note_add</mat-icon></button>
-<table>  
-  <th>ID</th>
-  <th>Cliente</th> 
-  <th>Data de Entrega</th>
-  <th>Data de emissão</th>
-  <th>Endereços</th>
-  <th>Valor Total</th>
-  <th>Excluir</th>
-    <tr *ngFor="let order of orders" (click)="openModalEdit(order)">
-      <td>{{order.id}}  </td>
-      <td>{{order.client_nameFantasy}} </td>
-      <td>{{order.DTdelivery}} </td>
-      <td>{{order.DTemission}} </td>
-      <td>{{order.adress_street}} </td>
-      <td>{{order.total}} </td>
-      <td><button class="BTdelet"(click)="deleteGroup(order.id)"><mat-icon>delete</mat-icon></button></td>
+<div class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Pesquise por um Produto</mat-label>
+    <input matInput placeholder="" value="" [(ngModel)]="filterTerm" (input)="filterInput()">
+  </mat-form-field>
+<button mat-raised-button color="primary" (click)="openModal()" >
+  <mat-icon>library_add</mat-icon>
+</button>
+</div>
+
+<div *ngIf="orders.length == 0 && filterTerm != ''">
+  <p>Nenhum registro encontrado</p>
+  <img class="imgBuscar" src="/assets/dog.jpeg">
+  </div>
+
+<div class="tabela">
+  <table class="table" *ngIf="orders.length > 0">
+    <tr class="title">
+      <td> ID </td>
+      <td> Cliente </td>
+      <td> Data de Entrega </td>
+      <td> Data de Emissão</td>
+      <td> Endereços</td>
+      <td> Valor Total</td>
+      <td class="delete">Deletar</td>
     </tr>
-</table>
+    <tr *ngFor="let order of orders">
+      <td> {{order.id}} </td>
+      <td (click)="openModalEdit(order)"> {{order.client_nameFantasy}} </td>
+      <td> {{order.DTemission}}</td>
+      <td> {{order.DTdelivery}}</td>
+      <td> {{order.adress_street}}</td>
+      <td> R$ {{order.total}}</td>
+      <td (click)="deleteGroup(order.id)" class="delete"> <mat-icon>delete_outline</mat-icon> </td>
+    </tr>
+  </table>
+</div>

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { HttpService } from 'src/services/http.service';
 import { QuestionService } from 'src/services/question.service';
 import { OrderModalComponent } from '../order-modal/order-modal.component';
+import { ObjectUtils } from '../utils/ObjectUtils';
 
 @Component({
   selector: 'app-order',
@@ -19,6 +20,7 @@ export class OrderComponent implements OnInit {
   fkadress = '';
   total = 0;
   filterTerm : string = '';
+  originalList : Array<any> = [];
 
   constructor(private httpService : HttpService, public dialog: MatDialog, private question: QuestionService) { }
 
@@ -68,17 +70,20 @@ export class OrderComponent implements OnInit {
 
   public async deleteGroup(id : number){
     this.question.ask(async () => {
-      await this.httpService.patch('client', {id});
+      await this.httpService.patch('order', {id});
       console.log(Response);
       this.list();
     })
-    } 
+  } 
 
-    public async deleteAdress(id : number){
-      this.question.ask(async () => {
-        await this.httpService.patch('adress', {id});
-        console.log(Response);
-      })
-      } 
+  public async deleteAdress(id : number){
+    this.question.ask(async () => {
+      await this.httpService.patch('adress', {id});
+      console.log(Response);
+     })
+  } 
 
+  public filterInput(){
+    ObjectUtils.filterArray(this.orders, this.originalList, this.filterTerm, 'ProdOrder');
+   }
 }

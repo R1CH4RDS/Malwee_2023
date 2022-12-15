@@ -215,7 +215,7 @@ knl.patch('order', async (req, resp) => {
                 id: req.body.id,
             }
         });
-        resp.send("Ativado");
+        resp.send();
     } else {
         await knl.sequelize().models.Order.update({
             status: "0"
@@ -224,7 +224,7 @@ knl.patch('order', async (req, resp) => {
                 id: req.body.id,
             }
         });
-        resp.send("Desativado");
+        resp.send();
     }
        
 });

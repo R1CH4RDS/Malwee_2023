@@ -4,7 +4,7 @@
     <input matInput placeholder="" value="" [(ngModel)]="filterTerm" (input)="filterInput()">
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="openModal()" aria-label="Example icon button with a plus one icon">
+  <button mat-raised-button color="primary" (click)="openModal()">
     <mat-icon>library_add</mat-icon>
   </button>
 </div>
@@ -22,7 +22,6 @@
       <td> Grupo </td>
       <td class="delete">Deletar</td>
     </tr>
-    <div *ngIf="">
     <tr *ngFor="let subgroup of subgroups" >
       
       <td> {{subgroup.id}} </td>
@@ -31,6 +30,5 @@
       <td (click)="deleteSubGroup(subgroup.id)" class="delete"> <mat-icon>delete_outline</mat-icon> </td>
 
     </tr>
-  </div>
 </table>
 </div>
